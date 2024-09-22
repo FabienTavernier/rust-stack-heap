@@ -152,7 +152,7 @@ const STEPS = [
     comment: `
       <p>
         Fin d'exécution de la fonction <code>my_func</code>.<br>
-        On effecture le <b>retour de contexte</b> vers <code>main</code> (marqueur <code>1</code>).
+        On effectue le <b>retour de contexte</b> vers <code>main</code> (marqueur <code>1</code>).
       </p>
       <p>
         La frame <code>1</code> est supprimée (<i>pop</i>), <code>x</code> est
@@ -167,7 +167,7 @@ const STEPS = [
     comment: `
       <p>
         Fin d'exécution de la fonction <code>main</code>.<br>
-        On effecture le <b>retour de contexte</b> vers <code>ROOT</code> (marqueur <code>0</code>).
+        On effectue le <b>retour de contexte</b> vers <code>ROOT</code> (marqueur <code>0</code>).
       </p>
       <p>
         La frame <code>0</code> est supprimée (<i>pop</i>), <code>x</code> et <code>y</code>
