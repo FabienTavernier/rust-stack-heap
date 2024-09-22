@@ -1,0 +1,24 @@
+:root {
+  --color-black: #000;
+  --color-blue: #3c5c8c;
+  --color-green: #328877;
+  --color-grey: #cacaca;
+  --color-orange: #d5a34e;
+  --color-purple: #a13b82;
+  --color-red: #cb4a5c;
+  --color-white: #fff;
+
+  --color-bg: #eee;
+
+  --trans-black: rgb(from var(--color-black) r g b / 0.33);
+  --trans-blue: rgb(from var(--color-blue) r g b / 0.33);
+  --trans-green: rgb(from var(--color-green) r g b / 0.33);
+  --trans-grey: rgb(from var(--color-grey) r g b / 0.33);
+  --trans-orange: rgb(from var(--color-orange) r g b / 0.33);
+  --trans-purple: rgb(from var(--color-purple) r g b / 0.33);
+  --trans-red: rgb(from var(--color-red) r g b / 0.33);
+  --trans-white: rgb(from var(--color-white) r g b / 0.66);
+
+  --font-sans: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-code: 'Anonymous Pro', monospace;
+}

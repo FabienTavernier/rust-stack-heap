@@ -1,0 +1,14 @@
+// Export to make variables available in JS
+// NOTE: the name of this file MUST BE `xxx.module.scss`
+//
+// In JS → `import vars from '../style/export.module.scss';`
+:export {
+  colorBlack: var(--color-black);
+  colorBlue: var(--color-blue);
+  colorGreen: var(--color-green);
+  colorGrey: var(--color-grey);
+  colorOrange: var(--color-orange);
+  colorPurple: var(--color-purple);
+  colorRed: var(--color-red);
+  colorWhite: var(--color-white);
+}

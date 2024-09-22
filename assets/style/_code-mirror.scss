@@ -1,0 +1,40 @@
+.code-wrapper {
+  margin-bottom: 2.4rem;
+  
+  .cm-editor {
+    border: 1px solid var(--color-grey);
+    
+    &.cm-focused {
+      outline: none;
+    }
+  }
+  
+  .cm-content {
+    caret-color: transparent;
+    pointer-events: none;
+  }
+  
+  .cm-cursor {
+    display: none;
+  }
+
+  // ACTIVE
+  // .cm-line .cm-activeLine {
+  //   background-color: #90a4ae26;
+  //   color: #607D8B;
+  // }
+  .cm-gutterElement.cm-activeLineGutter {
+    background-color: #90a4ae26;
+  }
+
+  // MARKER
+  .cm-arrow-gutter {
+    width: 3.4rem;
+
+    // .cm-gutterElement {
+    //   color: #fab;
+    //   padding-left: 24px;
+    //   cursor: default;
+    // }
+  }
+}
