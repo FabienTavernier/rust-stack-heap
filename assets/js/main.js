@@ -7,18 +7,22 @@ import { addArrowMarker } from './cm/cm-gutter_marker';
 
 import { addComment, removeTarget, updateTarget } from './target';
 
-import { CODE, STEPS } from './setup';
+// import { CODE, STEPS } from './setup';
 
 import '../style/index.scss';
 
 const nextStepBtn = document.getElementById('step-next');
-const state = getConfig(CODE);
 
 let currentStep = 0;
 let editor;
 
+let steps;
+let code;
+
 function run() {
   reset();
+
+  const state = getConfig(code);
 
   editor = new EditorView({
     state,
@@ -42,35 +46,33 @@ function reset() {
   nextStepBtn.removeEventListener('click', next);
 }
 
-function next() {
-  console.log('NEXT');
-  
-  const { next: lastStep } = STEPS[STEPS.length - 1];
+function next() {  
+  const { next: lastStep } = steps[steps.length - 1];
 
-  if (currentStep < STEPS.length) {
+  if (currentStep < steps.length) {
     if (editor) {
-      moveCursorToLine(editor, STEPS[currentStep], lastStep);
+      moveCursorToLine(editor, steps[currentStep], lastStep);
 
-      if (STEPS[currentStep].target) {
-        updateTarget(STEPS[currentStep].target);
+      if (steps[currentStep].target) {
+        updateTarget(steps[currentStep].target);
       }
 
-      if (STEPS[currentStep].remove) {
-        removeTarget(STEPS[currentStep].remove);
+      if (steps[currentStep].remove) {
+        removeTarget(steps[currentStep].remove);
       }
 
-      if (STEPS[currentStep].marker) {
+      if (steps[currentStep].marker) {
         addArrowMarker(
           editor,
-          STEPS[currentStep].marker,
+          steps[currentStep].marker,
         );
       }
 
-      if (STEPS[currentStep].comment) {
-        addComment(STEPS[currentStep].comment);
+      if (steps[currentStep].comment) {
+        addComment(steps[currentStep].comment);
       }
 
-      nextStepBtn.textContent = currentStep == STEPS.length - 1 ? 'End': 'Next step';
+      nextStepBtn.textContent = currentStep == steps.length - 1 ? 'End': 'Next step';
       currentStep += 1;
     }
   } else {
@@ -78,4 +80,23 @@ function next() {
   }
 }
 
-run();
+function getURLParameters() {
+  const params = new URLSearchParams(window.location.search);
+  
+  return {
+    theme: params.get('theme') || 'stack',
+    setup: params.get('setup') || 'basic',
+  };
+}
+
+async function init() {
+  const { theme, setup } = getURLParameters();
+  const { CODE, STEPS } = await import(`./setups/setup-${theme}-${setup}.js`);
+
+  code = CODE;
+  steps = STEPS;
+
+  run();
+}
+
+init();

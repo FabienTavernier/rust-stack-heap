@@ -1,4 +1,4 @@
-import vars from '../style/export.module.scss';
+import vars from '../../style/export.module.scss';
 
 const CODE = `
 main(); // ROOT
@@ -7,10 +7,16 @@ fn main() {
     let x = 42;
     let y = 16;
     my_func();
+    let z = divide(25.0, 4.7);
 }
 
 fn my_func() {
     let x = 123;
+}
+
+fn divide(a: f32, b:f32) -> f32 {
+    let result = a / b;
+    result;
 }
 `;
 
