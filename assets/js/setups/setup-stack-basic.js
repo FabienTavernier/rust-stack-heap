@@ -23,7 +23,7 @@ const STEPS = [
       element: {
         tag: 'div',
         id: 'frame-0',
-        className: 'frame',
+        className: 'frame frame--red',
         innerHTML: '<span class="frame__title">Frame 0</span>',
       },
       reset: true,
@@ -84,7 +84,7 @@ const STEPS = [
     comment: `
       <p>La variable <code>y</code> est <b>stockée</b> dans la <b>frame <code>0</code>.</p>
     `,
-  },  
+  },
   {
     current: 6,
     next: 7,
@@ -93,7 +93,7 @@ const STEPS = [
       element: {
         tag: 'div',
         id: 'frame-1',
-        className: 'frame',
+        className: 'frame frame--blue',
         innerHTML: '<span class="frame__title">Frame 1</span>',
       },
       reset: false,

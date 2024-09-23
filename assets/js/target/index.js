@@ -1,16 +1,22 @@
 function updateTarget(content) {
-  const parent = document.getElementById(content.parentID);
-
-  if (content.reset) {
-    parent.textContent = '';
+  if (!Array.isArray(content)) {
+    content = [content];
   }
-  
-  const { tag, ...attributes } = content.element;
 
-  const element = document.createElement(tag);
-  Object.assign(element, attributes);
-  
-  parent.append(element);
+  for (const c of content) {
+    const parent = document.getElementById(c.parentID);
+
+    if (c.reset) {
+      parent.textContent = '';
+    }
+    
+    const { tag, ...attributes } = c.element;
+
+    const element = document.createElement(tag);
+    Object.assign(element, attributes);
+    
+    parent.append(element);
+  }
 }
 
 function removeTarget(id) {

@@ -29,7 +29,7 @@ const STEPS = [
       element: {
         tag: 'div',
         id: 'frame-0',
-        className: 'frame',
+        className: 'frame frame--red',
         innerHTML: '<span class="frame__title">Frame 0</span>',
       },
       reset: true,
@@ -99,7 +99,7 @@ const STEPS = [
       element: {
         tag: 'div',
         id: 'frame-1',
-        className: 'frame',
+        className: 'frame frame--blue',
         innerHTML: '<span class="frame__title">Frame 1</span>',
       },
       reset: false,
@@ -174,7 +174,7 @@ const STEPS = [
       element: {
         tag: 'div',
         id: 'frame-1',
-        className: 'frame',
+        className: 'frame frame--blue',
         innerHTML: '<span class="frame__title">Frame 1</span>',
       },
       reset: false,
