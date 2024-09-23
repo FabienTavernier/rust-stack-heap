@@ -16,6 +16,9 @@ async function init() {
   const { CODE, STEPS } = await import(`./setups/setup-${theme}-${setup}.js`);
 
   document.getElementById('title-theme').textContent = theme;
+   
+  document.querySelector(`a[href="${window.location.pathname + window.location.search}"]`)
+    .classList.add('active');
 
   animation.init(CODE, STEPS);
 }

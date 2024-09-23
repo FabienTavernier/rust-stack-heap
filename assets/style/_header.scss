@@ -26,10 +26,20 @@ nav {
     color: var(--color-blue);
     text-decoration: none;
     transition: all 0.3s linear;
+    
+    &.active,
+    &:hover {
+      text-decoration: underline; 
+      text-decoration-thickness: 4px;
+      text-underline-offset: 4px;
+    }
 
     &:hover {
-      color: var(--color-purple);
-      text-decoration: underline;
+      text-decoration-color: var(--color-green);
+    }
+
+    &.active {
+      text-decoration-color: var(--color-orange);
     }
   }
 }
